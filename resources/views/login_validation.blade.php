@@ -43,7 +43,7 @@
                                 <div class="mb-3">
                                     <label class="form-label">Username</label>
                                     <div class="form-control-feedback form-control-feedback-start">
-                                        <input type="text" class="form-control" placeholder="john@doe.com" required>
+                                        <input type="text" class="form-control" placeholder="@sezintip.com" required>
                                         <div class="invalid-feedback">Enter your username</div>
                                         <div class="form-control-feedback-icon">
                                             <i class="ph-user-circle text-muted"></i>

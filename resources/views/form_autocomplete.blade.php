@@ -8,38 +8,63 @@
 <!-- Content area -->
 <div class="content">
 
-    <!-- Autocomplete -->
+    <!-- Eğitim Takvimi -->
     <div class="card">
         <div class="card-header">
             <h5 class="mb-0">Eğitim Tarihleri</h5>
         </div>
 
         <div class="card-body">
-            <div class="mb-4">Sezin Akademi Öğrenmeyi zaman ve mekanla sınırlı tutmayan, eğitimin her zaman,
-                her yerde, devamlı olmasının önemini biliyor, İnovasyon ve Gelişim Akademisi çatısı altında tüm personellerimizin gelişimine hem örgün hem uzaktan eğitimlerimizle değer katıyoruz. <br> <br>
-                <code>ÖNEMLİ UYARI : Eğitim linki dersten 5 dakika önce "Link" kısmında gözükecektir.</code>
-            </div>
+            <form action="{{ route('admin.schedule.update') }}" method="POST">
+                @csrf
+                <div class="mb-4">
+                    Sezin Akademi Öğrenmeyi zaman ve mekanla sınırlı tutmayan, eğitimin her zaman,
+                    her yerde, devamlı olmasının önemini biliyor, İnovasyon ve Gelişim Akademisi çatısı altında tüm personellerimizin gelişimine hem örgün hem uzaktan eğitimlerimizle değer katıyoruz.
+                    <br><br>
+                    <code>ÖNEMLİ UYARI: Eğitim linki dersten 5 dakika önce "Link" kısmında gözükecektir.</code>
+                </div>
 
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="mb-4">
-                        <div class="fw-bold border-bottom pb-2 mb-2">Pazartesi</div>
-                        <p class="mb-3"><code>Pazartesi 17:30 - 18:45</code></p>
-                        
-                    </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Gün</th>
+                                <th>Saat</th>
+                                <th>Link</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Pazartesi</td>
+                                <td>
+                                    <input type="text" name="monday_time" class="form-control" value="{{ $schedule->monday_time ?? '17:30 - 18:45' }}">
+                                </td>
+                                <td>
+                                    <input type="text" name="monday_link" class="form-control" value="{{ $schedule->monday_link ?? '' }}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Salı</td>
+                                <td>
+                                    <input type="text" name="tuesday_time" class="form-control" value="{{ $schedule->tuesday_time ?? '16:45 - 17:30' }}">
+                                </td>
+                                <td>
+                                    <input type="text" name="tuesday_link" class="form-control" value="{{ $schedule->tuesday_link ?? '' }}">
+                                </td>
+                            </tr>
+                            <!-- Diğer günler için de benzer satırlar ekleyin -->
+                        </tbody>
+                    </table>
+                </div>
 
-                    <div class="mb-4">
-                        <div class="fw-bold border-bottom pb-2 mb-2">Salı</div>
-                        <p class="mb-3"><code>Salı 16:45 - 17:30</code></p>
-                        
-                    </div>
+                <div class="mt-3">
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- /Eğitim Takvimi -->
+
 </div>
 <!-- /content area -->
-
-@endsection
-@section('center-scripts')
-<script src="{{URL::asset('assets/js/vendor/forms/inputs/autocomplete.min.js')}}"></script>
-@endsection
-@section('scripts')
-<script src="{{URL::asset('assets/demo/pages/form_autocomplete.js')}}"></script>
 @endsection

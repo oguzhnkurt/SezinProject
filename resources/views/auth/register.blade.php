@@ -3,16 +3,22 @@
 @section('content')
 
 <!-- Content area -->
-<div class="content d-flex justify-content-center align-items-center">
+<div class="content d-flex justify-content-center align-items-center" style="min-height: 100vh; position: relative; overflow: hidden;">
+
+    <!-- Video Background -->
+    <video autoplay muted loop id="bg-video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+        <source src="{{ asset('assets/videos/background.mp4') }}" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
 
     <!-- Registration form -->
-    <form class="login-form" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+    <form class="login-form" method="POST" action="{{ route('register') }}" enctype="multipart/form-data" style="position: relative; z-index: 1; background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 10px; width: 100%; max-width: 400px; margin: auto; transform: translateX(5%);">
         @csrf
         <div class="card mb-0">
             <div class="card-body">
                 <div class="text-center mb-3">
                     <div class="d-inline-flex align-items-center justify-content-center mb-4 mt-2">
-                        <img src="{{URL::asset('assets/images/logo_icon.svg')}}" class="h-48px" alt="">
+                        <img src="{{ URL::asset('assets/images/logo_icon.svg') }}" class="h-48px" alt="">
                     </div>
                     <h5 class="mb-0">Hesap Oluştur</h5>
                     <span class="d-block text-muted">Tüm alanlar gereklidir.</span>
@@ -71,7 +77,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="password-confirm" class="form-label">{{ __('Confirm Password') }}</label>
+                    <label for="password-confirm" class="form-label">{{ __('Şifreyi Onayla') }}</label>
                     <div class="form-control-feedback form-control-feedback-start">
                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="•••••••••••">
                         <div class="form-control-feedback-icon">
@@ -88,9 +94,6 @@
                         <strong>{{ $message }}</strong>
                     </span>
                     @enderror
-                    <div class="">
-                        <i data-feather="file"></i>
-                    </div>
                 </div>
 
                 <button type="submit" class="btn btn-teal w-100"> {{ __('Kayıt Ol') }}</button>

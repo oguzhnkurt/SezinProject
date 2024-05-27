@@ -71,7 +71,7 @@
                                 <div class="mb-3">
                                     <label class="form-label">Your email</label>
                                     <div class="form-control-feedback form-control-feedback-start">
-                                        <input type="text" class="form-control" placeholder="john@doe.com">
+                                        <input type="text" class="form-control" placeholder="@sezintip.com">
                                         <div class="form-control-feedback-icon">
                                             <i class="ph-at text-muted"></i>
                                         </div>
@@ -81,7 +81,7 @@
                                 <div class="mb-3">
                                     <label class="form-label">Repeat email</label>
                                     <div class="form-control-feedback form-control-feedback-start">
-                                        <input type="text" class="form-control" placeholder="john@doe.com">
+                                        <input type="text" class="form-control" placeholder="@sezintip.com">
                                         <div class="form-control-feedback-icon">
                                             <i class="ph-at text-muted"></i>
                                         </div>
