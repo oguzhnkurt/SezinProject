@@ -30,6 +30,7 @@
         "sass-loader": "^12.1.0"
     },
     "dependencies": {
+        "@splinetool/runtime": "^1.4.5",
         "webpack-rtl-plugin": "^2.0.0"
     }
 }

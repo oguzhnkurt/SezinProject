@@ -28,7 +28,7 @@
                                 <div class="text-center w-32px me-3">
                                     <i class="ph-magnifying-glass"></i>
                                 </div>
-                                <span>Arama <span class="fw-bold"></span> Yapın</span>
+                                <span>Arama <span class="fw-bold"></span> Yap</span>
                             </button>
 
                             <div class="dropdown-divider"></div>
